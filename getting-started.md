@@ -1,5 +1,7 @@
 # Getting started
 
+## What is Widgets
+
 ## Installation
 
 ## Online playground
