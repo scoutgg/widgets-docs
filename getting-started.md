@@ -6,12 +6,10 @@
 
 ## Installation
 ### NPM
-**Install**
 ```npm install --save @scoutgg/widgets```
-
-**Module**
-```require('@scoutgg/widgets')```
 
 ## Online playground
 
 ## Create a Widgets project
+Import Widgets as a module in your project:
+```require('@scoutgg/widgets')```
