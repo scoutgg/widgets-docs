@@ -19,6 +19,10 @@ If you want to load Widgets directly to your project without installing it, you 
 
 ### What is Web Components
 
+## Create a Widgets project
+
+## How it works
+
 #### @Component
 ```
 import {Component, Attribute} from 'ftw/lib'
@@ -148,6 +152,3 @@ const widgetsInterface = Object.assign(lifecycle, {
     }
 })
 ```
-
-## Create a Widgets project
-
