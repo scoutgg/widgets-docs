@@ -4,8 +4,7 @@
 ### NPM
 `npm install --save @scoutgg/widgets`
 
-Import Widgets as a module in your project:
-
+**Module:**
 ```js
 require('@scoutgg/widgets')
 ```
