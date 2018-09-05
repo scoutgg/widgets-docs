@@ -25,7 +25,7 @@ If you want to load Widgets directly to your project without installing it, you 
 For a bystander this might seem a bit magical, but fortunately it's just clever code. Let's go briefly through it and see what it does.
 
 #### @Component
-```
+```js
 import {Component, Attribute} from 'ftw/lib'
 
 @Component('namespace')
@@ -59,7 +59,7 @@ function Component(namespace) {
 #### @Attribute
 When you set an attribute with `@Attribute` in Widgets you set the name and Type, which is being being added to an array and watched by the browser.
 
-```
+```js
 import {Component, Attribute} from 'ftw/lib'
 
 @Component('namespace')
@@ -95,7 +95,7 @@ function Attribute(name, Type) {
 
 #### @Template
 
-```
+```js
 import {Component, Template} from 'ftw/lib'
 // https://github.com/Matt-Esch/virtual-dom
 import {h} from 'virtual-dom'
@@ -128,7 +128,7 @@ function Template(template) {
 
 #### Widgets interface and lifecycles
 
-```
+```js
 const lifecycle = {
     constructor() {
       /* setup */
@@ -158,7 +158,7 @@ const widgetsInterface = Object.assign(lifecycle, {
 ```
 
 ##### The lifecycle constructor
-```
+```js
 const lifecycle = {
    /* in the old web component spec
    ** this used to be called createdCallback
@@ -175,7 +175,7 @@ const lifecycle = {
 ```
 
 ##### Connected and disconected callback
-```
+```js
 const lifecycle = {
    /*
    ** In the old web component spec
@@ -206,7 +206,7 @@ const lifecycle = {
 ```
 
 ##### Attribute changed callback
-```
+```js
 let changed = null
 function applyChanges() {
   for(const [element, changes] of changed) {
@@ -238,7 +238,7 @@ const lifecycle = {
 ```
 
 ##### Render
-```
+```js
 import {h, diff, patch} from 'virtual-dom'
 
 const cache = new WeakMap()
@@ -265,7 +265,7 @@ const widgetsInterface = {
 ```
 
 ##### Update
-```
+```js
 const widgetsInterface = {
    update(promises) {
      if(!Array.isArray(promises)) promises = [promises]
@@ -285,7 +285,7 @@ const widgetsInterface = {
 ```
 
 ##### Emit
-```
+```js
 const widgetsInterface = {
    emit(name, data, opts={}) {
     // create an event that bubbles and goes through shadow boundaries
