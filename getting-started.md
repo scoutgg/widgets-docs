@@ -22,7 +22,7 @@ If you want to load Widgets directly to your project without installing it, you 
 ## Create a Widgets project
 
 ## How it works
-For a bystander this might seem a bit magical, but fortunately it's just clever code. Let's go briefly through it and see what it does.
+For a bystander this might seem magical, but fortunately it's just a bit of clever code. Let's go briefly through it and see what it does.
 
 #### @Component
 ```js
