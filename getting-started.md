@@ -157,7 +157,7 @@ const widgetsInterface = Object.assign(lifecycle, {
 })
 ```
 
-#### The lifecycle constructor
+##### The lifecycle constructor
 ```
 const lifecycle = {
    /* in the old web component spec
@@ -174,7 +174,7 @@ const lifecycle = {
 }
 ```
 
-#### Connected and disconected callback
+##### Connected and disconected callback
 ```
 const lifecycle = {
    /*
@@ -205,7 +205,7 @@ const lifecycle = {
  }
 ```
 
-#### Attribute changed callback
+##### Attribute changed callback
 ```
 let changed = null
 function applyChanges() {
@@ -237,7 +237,7 @@ const lifecycle = {
 }
 ```
 
-#### Render
+##### Render
 ```
 import {h, diff, patch} from 'virtual-dom'
 
@@ -264,7 +264,7 @@ const widgetsInterface = {
 }
 ```
 
-#### Update
+##### Update
 ```
 const widgetsInterface = {
    update(promises) {
@@ -284,7 +284,7 @@ const widgetsInterface = {
 }
 ```
 
-#### Emit
+##### Emit
 ```
 const widgetsInterface = {
    emit(name, data, opts={}) {
