@@ -71,9 +71,154 @@ $ gulp create-component --to-do-app
 ```
 
 This will be a parent component, meaning it will control the state of its
-sub-component. Which basically means it will control the todo-list.
+sub-component. Which basically means it will control the todo-list. It could
+look something along the lines of:
 
+```js
+import { Component, Template } from '@scoutgg/widgets'
+import { wire } from 'hyperhtml'
 
+@Component('demo')
+@Template(function (html) {
+  html `
+    <h1>To do list</h1>
+    <ul>
+      ${this.todo.map(item => wire()`
+        <li>
+          ${item}
+            <button onclick=${this.removeTask.bind(this, item)}>Done! 👌</button>
+        </li>
+      `)}
+    </ul>
+  `
+})
+export default class ToDoApp extends HTMLElement {
+  connectedCallback() {
+    this.todo = ['Remove this task', '...and this task']
+  }
+  addTask({ task }) {
+    this.todo.push(task)
+    this.render()
+  }
+  removeTask(task) {
+    this.todo.splice(this.todo.indexOf(task), 1)
+    this.render()
+  }
+}
+```
 
+Let's create a way of creating new tasks in our to do list, and have that done
+in a sub-component of this parent.
 
-## Redering elements
+```bash
+$ gulp create-component --add-task
+```
+
+We want this widget to have an input field, a descriptive label and a button
+that puts our brand new task in the list, in the parent component who controls
+the state. Lets make the basic component code:
+
+```js
+import { Component, Template } from '@scoutgg/widgets'
+
+@Component('demo')
+@Template(function (html) {
+  html `
+    <form onsubmit=${this.save.bind(this)}>
+      <label style="font-size: bold;">New task:</label>
+      <input
+        type="text"
+        value=${this.description}
+        oninput=${this.setDescription.bind(this)}
+      />
+      <button onclick=${this.save.bind(this)}>Add➕</button>
+    </form>
+  `
+})
+export default class AddTask extends HTMLElement {
+  setTitle({ target }) {
+    this.title = target.value
+    this.render()
+  }
+  save(event) {
+    // TODO: Send to parent
+  }
+}
+```
+
+In this component we listen to some native events, for instance `oninput` and
+`onclick`. These will run functions defined in our component code.
+
+Lets dispatch an event to the parent component, so it can be aware that we
+want to make changes to the state. We do this by updating the `save`-method:
+
+```js
+save(event) {
+  event.preventDefault() // Avoid real submission
+  this.dispatchEvent(new CustomEvent('addTask', {
+    detail: this.description,
+  }))
+  this.description = ''
+  this.render()
+}
+```
+
+In this example we use native javascript with no syntactic sugar so we see
+clearly what is happening.
+
+Notice how we run `this.render()` in the `setDescription()` and `save` methods.
+By doing this we're telling widgets that it should re-render the template where
+there are changes.
+
+Now let's go back to the parent component, `toDoApp`, and import our new component
+by adding
+
+```js
+import '../add-task/add-task'
+```
+
+and use `<demo-add-task></demo-add-task>` in the template. Also see that we need
+to listen to the event `onaddTask`:
+
+```html
+<demo-add-task onaddTask=${this.addTask.bind(this)}></demo-add-task>
+```
+
+ A finished component could look like this:
+
+```js
+import { Component, Template } from '@scoutgg/widgets'
+import { wire } from 'hyperhtml'
+import '../add-task/add-task'
+
+@Component('demo')
+@Template(function (html) {
+  html `
+    <h1>To do list</h1>
+    <demo-add-task onaddTask=${this.addTask.bind(this)}></demo-add-task>
+    <ul>
+      ${this.todo.map(item => wire()`
+        <li>
+          ${item}
+            <button onclick=${this.removeTask.bind(this, item)}>Done! 👌</button>
+        </li>
+      `)}
+    </ul>
+  `
+})
+export default class ToDoApp extends HTMLElement {
+  connectedCallback() {
+    this.todo = ['Remove this task', '...and this task']
+  }
+  addTask({ detail }) {
+    this.todo.push(detail)
+    this.render()
+  }
+  removeTask(task) {
+    this.todo.splice(this.todo.indexOf(task), 1)
+    this.render()
+  }
+}
+```
+
+Awesome! You made a simple todo-app in widgets. 👏
