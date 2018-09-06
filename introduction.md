@@ -174,7 +174,7 @@ Now let's go back to the parent component, `toDoApp`, and import our new compone
 by adding
 
 ```js
-import '../add-task/add-task'
+import './components/add-task/add-task'
 ```
 
 and use `<demo-add-task></demo-add-task>` in the template. Also see that we need
