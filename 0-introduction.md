@@ -1,25 +1,4 @@
-# Getting started
-
-## Installation
-### NPM
-`npm install --save @scoutgg/widgets`
-
-### RawGit
-If you want to load Widgets directly to your project without installing it, you can add it like this:
-
-```js
-import { bootstrap, define, Component, Attribute, Template } from 'https://rawgit.com/scoutgg/widgets/master/esm/index.js'
-```
-
-## Online playground
-
-### Hello World!
-Let's start with the basics and say hello to the world.
-<iframe height='300' scrolling='no' title='Widgets: Hello World (w/ hyperhtml)' src='//codepen.io/ljonjivita/embed/YOQwKq/?height=300&theme-id=32712&default-tab=js,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/ljonjivita/pen/YOQwKq/'>Widgets: Hello World (w/ hyperhtml)</a> by Helene Konstantine Dunlop (<a href='https://codepen.io/ljonjivita'>@ljonjivita</a>) on <a href='https://codepen.io'>CodePen</a>.
-</iframe>
-
-<iframe height='300' scrolling='no' title='Widgets lite: Hello ${name}  (w/ hyperhtml)' src='//codepen.io/ljonjivita/embed/ZMyWrB/?height=300&theme-id=32712&default-tab=js,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/ljonjivita/pen/ZMyWrB/'>Widgets lite: Hello ${name}  (w/ hyperhtml)</a> by Helene Konstantine Dunlop (<a href='https://codepen.io/ljonjivita'>@ljonjivita</a>) on <a href='https://codepen.io'>CodePen</a>.
-</iframe>
+# Introduction
 
 ## What is Widgets
 Widgets by Scout Gaming Group is a small WebComponent library web apps. Widgets was developed in-house by Scout Gaming Group and is used in our products. By using the widgets library you will be able to efficiently create custom HTML elements with [shadowDOM](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM). This library is an extracted version so you can make brilliant apps faster and more reliable. Have fun!
@@ -54,30 +33,26 @@ The namespace and your class name will together form the complete tag-name of yo
 
 **Note:** In the JavaScript file we use camelCase for the class-name, which will be kebab-cased in the template.
 
+## Installation
+### NPM
+`npm install --save @scoutgg/widgets`
 
-## Create a Widgets project
-First clone the boiler plate:
-```bash
-$ git clone https://github.com/scoutgg/widgets-boilerplate.git
-```
-Then install the dependencies, either through npm or yarn.
+### RawGit
+If you want to load Widgets directly to your project without installing it, you can add it like this:
 
-**NPM:**
-
-```
-$ cd widgets-boilerplate
-$ npm install
+```js
+import { bootstrap, define, Component, Attribute, Template } from 'https://rawgit.com/scoutgg/widgets/master/esm/index.js'
 ```
 
-**Yarn:**
-```
-$ cd widgets-boilerplate
-$ yarn
-```
+## Online playground
 
-Now you can run the project with [budo](https://www.npmjs.com/package/budo), which will open an instance of the boilerplate in your browser with watching for code changes:
-```
-$ npm run serve
-```
+### Hello World!
+Let's start with the basics and say hello to the world.
+<iframe height='300' scrolling='no' title='Widgets: Hello World (w/ hyperhtml)' src='//codepen.io/ljonjivita/embed/YOQwKq/?height=300&theme-id=32712&default-tab=js,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/ljonjivita/pen/YOQwKq/'>Widgets: Hello World (w/ hyperhtml)</a> by Helene Konstantine Dunlop (<a href='https://codepen.io/ljonjivita'>@ljonjivita</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 
-Good job!☕ &nbsp;Let's move ahead to how the boilerplate works!
+<iframe height='300' scrolling='no' title='Widgets lite: Hello ${name}  (w/ hyperhtml)' src='//codepen.io/ljonjivita/embed/ZMyWrB/?height=300&theme-id=32712&default-tab=js,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/ljonjivita/pen/ZMyWrB/'>Widgets lite: Hello ${name}  (w/ hyperhtml)</a> by Helene Konstantine Dunlop (<a href='https://codepen.io/ljonjivita'>@ljonjivita</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+
+Good job!☕ &nbsp;Let's take a look at starting from a boilerplate!
