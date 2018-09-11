@@ -1,4 +1,29 @@
-# Introduction
+# Getting started
+
+## Create a Widgets project
+First clone the boiler plate:
+```bash
+$ git clone https://github.com/scoutgg/widgets-boilerplate.git
+```
+Then install the dependencies, either through npm or yarn.
+
+**NPM:**
+
+```
+$ cd widgets-boilerplate
+$ npm install
+```
+
+**Yarn:**
+```
+$ cd widgets-boilerplate
+$ yarn
+```
+
+Now you can run the project with [budo](https://www.npmjs.com/package/budo), which will open an instance of the boilerplate in your browser with watching for code changes:
+```
+$ npm run serve
+```
 
 ## How the boilerplate works
 
