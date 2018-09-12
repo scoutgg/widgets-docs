@@ -28,7 +28,7 @@ export default class Hello extends HTMLElement {
 First you want to find the `<demo-hello>` element and make sure it is the selected
 element:
 
-![Selecting element](https://github.com/scoutgg/widgets-docs/blob/master/assets/selecting-element.png?raw=true)
+![Selecting element](https://github.com/scoutgg/widgets-docs/blob/master/assets/selected-element.png?raw=true)
 
 Now you can start accessing values available in its `this`-context:
 
