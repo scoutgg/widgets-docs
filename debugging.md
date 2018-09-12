@@ -28,11 +28,11 @@ export default class Hello extends HTMLElement {
 First you want to find the `<demo-hello>` element and make sure it is the selected
 element:
 
-![Selecting element](https://github.com/scoutgg/widgets-docs/blob/master/assets/selecting-element.png)
+![Selecting element](https://github.com/scoutgg/widgets-docs/blob/master/assets/selecting-element.png?raw=true)
 
 Now you can start accessing values available in its `this`-context:
 
-![Testing values](https://github.com/scoutgg/widgets-docs/blob/master/assets/testing-values.png)
+![Testing values](https://github.com/scoutgg/widgets-docs/blob/master/assets/testing-values.png?raw=true)
 
 **Note**: Here you can easily see why `'billion of'` will become the default when
 `this.age` is `0` (because 0 is a falsy value).
@@ -44,10 +44,10 @@ In these cases you will have to invoke widgets render function to tell your
 rendering engine to re-render. This is done by running `this.render()`.
 
 Example of watched attribute:
-![Watched attributes](https://github.com/scoutgg/widgets-docs/blob/master/assets/watched-attributes.gif)
+![Watched attributes](https://github.com/scoutgg/widgets-docs/blob/master/assets/watched-attributes.gif?raw=true)
 
 Example of triggering render:
-![Render](https://github.com/scoutgg/widgets-docs/blob/master/assets/render.gif)
+![Render](https://github.com/scoutgg/widgets-docs/blob/master/assets/render.gif?raw=true)
 
 Example of code where you will need to trigger render:
 
